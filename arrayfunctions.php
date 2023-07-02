@@ -46,7 +46,37 @@
                 array_push($shoppingBasket, $_GET['item']); 
             }
         }
+        echo '<p>Shopping basket:</p>';
         print_r($shoppingBasket);
+
+        array_splice($shoppingBasket, 0, 4, array('mango', 'kiwi'));
+        echo '<p>Shopping basket:</p>';
+        print_r($shoppingBasket);
+
+        sort($shoppingBasket);
+        echo '<p>Shopping basket sorted in ascending order:</p>';
+        print_r($shoppingBasket);
+
+        $carMakes = array('BMW' => 'X5', 'Audi' => 'A6', 'Mercedes' => 'CLS');
+        echo '<p>Car Makes:</p>';
+        print_r($carMakes);
+
+        asort($carMakes);
+        echo '<p>Car makes sorted in ascending order by value:</p>';
+        print_r($carMakes);
+
+        arsort($carMakes);
+        echo '<p>Car makes sorted in descending order by value:</p>';
+        print_r($carMakes);
+
+        ksort($carMakes);
+        echo '<p>Car makes sorted in ascending order by keys:</p>';
+        print_r($carMakes);
+
+        krsort($carMakes);
+        echo '<p>Car makes sorted in descending order by keys:</p>';
+        print_r($carMakes);
+
         ?>
         <form action="" method='get'>
             <label for="item">Add item to shopping basket:</label>
